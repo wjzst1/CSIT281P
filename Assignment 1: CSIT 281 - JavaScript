@@ -1,0 +1,53 @@
+//ConsoleOutput.html
+
+ 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Assignment 1: CSIT 281 - JavaScript</title>
+
+</head>
+<body>
+
+<script type="text/javascript">
+
+
+// Print the answers for each of the following in the console.
+// 1: Print the number 3
+console.log("" + 3);
+
+// 2: Print the string 5
+console.log('5');
+
+// 3: Print the string Hello
+console.log('Hello');
+
+// 4: Print the number of characters in the string Hello
+let x = "Hello";
+console.log(x.length);
+
+// 5: Use a method to print the string Hello but have it changed to uppercase
+console.log(x.toUpperCase());
+
+// 6: Use the math obect to print a random whole number between 0 and 100
+console.log(Math.floor(Math.random() * (100 - 0 + 1) + 0));
+
+// 7: Create a variable called myMascot and use it to display the word Mounties
+var myMascot = "Mounties";
+console.log(myMascot);
+
+// 8: Create a variable using let and set it as true. Then on the following line set it to false and then print the variable.
+let boolVar = true;
+boolVar = false;
+console.log(boolVar);
+
+// 9: Use addition to display the number 15
+console.log(8+7);
+
+// 10: Use division to display the number 9
+console.log(27/3);
+</script>
+
+</body>
+</html>
