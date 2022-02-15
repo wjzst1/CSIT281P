@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Assignment 2: CSIT 281 - JavaScript</title>
+
+<style>
+
+</style>
+
+</head>
+<body>
+
+   <script type="text/javascript">
+
+// Create a variable called currentDate and store the current date using a built in JavaScript function.
+let pageView = 0;
+let pageTitle = 'Page Title';
+let pageAuthor = 'Page Author';
+// Create a function that writes the currentDate variable to the document.
+function pageTitles() {
+document.write(pageTitle);
+}
+function pageAuthors() {
+document.write(pageAuthor);
+}
+function pageViews() {
+pageView++;
+document.write(pageView);
+}
+//this is the one i added on your function
+function pageDate(){
+var today = new Date();
+var dd = String(today.getDate()).padStart(2, '0');
+var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = today.getFullYear();
+
+
+today = mm + '/' + dd + '/' + yyyy;
+document.write(today);
+}
+</script>
+</head>
+<body>
+<h1 class="page-title"><script>pageTitles();</script></h1>
+
+
+<p>by: <script>pageAuthors();</script></p>
+
+
+<!-- Print the current date using the function you created after the page author but before the page view counter. -->
+
+
+<small><script>pageViews();</script></small>
+<br>
+<small>Date:<script>pageDate();</script></small>
+
+</body>
+</html>
