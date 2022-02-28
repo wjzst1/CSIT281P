@@ -1,0 +1,61 @@
+var getDaysInMonth = function(month,year) {
+  
+  var monthsOfTheYear = [
+  "January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
+var b = monthsOfTheYear.indexOf(month) + 1;
+  var isLeapYear = false;
+   if ((0 == year % 4) && (0 != year % 100) || (0 == year % 400)) {
+     isLeapYear = true;
+    } else {
+      isLeapYear = false;
+    }
+// return new Date(year, month, 0).getDate();
+  switch(b){
+    case 1:
+      return "January has 31 days";
+      break;
+    case 2:
+      if(isLeapYear){
+      return "February has 29 days";
+      }
+      else{
+        return "February has 28 days";
+      }
+      break;
+    case 3:
+      return "March has 31 days";
+      break;
+     case 4:
+      return "April has 30 days";
+      break;
+     case 5:
+      return "May has 31 days";
+      break;
+     case 6:
+      return "June has 30 days";
+      break;
+     case 7:
+      return "July has 31 days";
+      break;
+     case 8:
+      return "August has 31 days";
+      break;
+     case 9:
+      return "September has 30 days";
+      break;
+     case 10:
+      return "October has 31 days";
+      break;
+     case 11:
+      return "November has 30 days";
+      break;
+     case 12:
+      return "December has 31 days";
+      break;
+  }
+};
+
+
+document.write(getDaysInMonth("January", 2022));
