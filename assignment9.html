@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width">
+ <title>replit</title>
+ <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div>Background Color:</div> <div id="bgcolor"></div>
+<div>Topic Title:</div><div id="title"></div>
+<div>Topic Summary:</div><div id="summary"></div>
+<div>Photo:</div><img id="photo" width="100" height="100"/>
+<select id="topic">
+<option value="baseball">baseball</option>
+<option value="football">football</option>
+<option value="basketball">basketball</option>
+</select>
+<br>
+<button onclick="changeColor()">Change Topic</button>
+<script>
+function changeColor(){
+let topic = document.getElementById("topic").value
+let color,title,summary,photo
+if(topic=="basketball"){
+color = "red"
+title = "Pittsburgh Steelers"
+summary = "This paragraph is for Pittsburgh Steelers"
+photo = "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/pit.png"
+}
+else if(topic=="football"){
+color = "blue"
+title = "Arizona Cardinals"
+summary = "This paragraph is for Arizona Cardinals"
+photo = "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/ari.png"
+}
+else{
+color = "yellow"
+title = "Baltimore Orioles"
+summary = "This paragraph is for Baltimore Orioles"
+photo = "https://sports.cbsimg.net/fly/images/mlb/logos/team/light/302.svg"
+}
+ console.log(photo)
+ document.getElementById("bgcolor").innerHTML = color
+document.getElementById("title").innerHTML = title
+ document.getElementById("summary").innerHTML = title
+document.getElementById("photo").src = photo
+ 
+document.body.style.background = color;
+}
+</script>
+</body>
+</html>
