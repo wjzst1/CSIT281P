@@ -1,13 +1,19 @@
-class Main {
-  public static void main(String[] args) {
-    //declaration of array planets..
-    //initializing with names of all planets..
-    String[] planets = {"Mercury","Venus","Earth","Mars","Jupiter","Saturn","Uranus","Neptune","Pluto"};
-    //size variable for number of items..
-    int size = planets.length;
-    //loop to list entire array..
-    for(int i = 0;i < size;i++){
-      System.out.println(planets[i]);
+public class Main {
+    public static void main(String[] args) {
+    //Initializing array:
+        String[] planets = {"Mercury",
+                "Venus",
+                "Earth",
+                "Mars",
+                "Jupiter",
+                "Saturn",
+                "Uranus",
+                "Neptune",
+                "Pluto"};
+        //Printing all items in array:
+        System.out.println("Printing planets from array:::::::::::::::::");
+        for (String planet : planets) {
+            System.out.println(planet);
+        }
     }
-  }
 }
