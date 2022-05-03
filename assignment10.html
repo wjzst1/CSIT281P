@@ -1,13 +1,42 @@
-var timer = document.getElementById("clear-timer");
-timer.innerHTML = "";
-document.getElementById("btn").onclick = function () {
-  clearTextBox(); // clears textbox when clicked 
-  window.setTimeout(function () { // starts timer on click of the button 
-    timer.innerHTML = "Timer Started!"; // writes text in the text box 
-  }, 100); // this says to start timer at a delay of 100ms 
-};
-var clearTextBox = function () { // to clear textbox clearTextBox.innerHTML = ""; };
-    <br > < div id = "btn"
-    style = "width:100px;text-align:center;" > < input type = "button"
-    onclick = "clearTextBox()"
-    value = "Clear TextBox" > < /div> <div id="clear-timer"></div > < /html>
+/*
+This is a one page application that allows users to input a list of items they need to buy at the grocery store.
+The user can then check off items as they are added to their cart, and once all items are added to the cart,
+the user can see the total cost of the items in their cart.
+*/
+
+// Variable to hold the total cost of the items in the cart
+var totalCost = 0;
+
+// Function to add an item to the cart
+function addItem(itemName, itemCost) {
+    // Add the cost of the item to the total cost variable
+    totalCost += itemCost;
+    // Get the element that holds the list of items in the cart
+    var list = document.getElementById("cart-list");
+    // Create a new list item for the item being added to the cart
+    var item = document.createElement("li");
+    // Set the innerHTML of the list item to the name of the item being added to the cart
+    item.innerHTML = itemName;
+    // Append the list item to the list of items in the cart
+    list.appendChild(item);
+}
+
+// Function to remove an item from the cart
+function removeItem(itemName, itemCost) {
+    // Remove the cost of the item from the total cost variable
+    totalCost -= itemCost;
+    // Get the element that holds the list of items in the cart
+    var list = document.getElementById("cart-list");
+    // Get the list item for the item being removed from the cart
+    var item = document.getElementById(itemName);
+    // Remove the list item from the list of items in the cart
+    list.removeChild(item);
+}
+
+// Function to update the total cost of the items in the cart
+function updateTotalCost() {
+    // Get the element that holds the total cost of the items in the cart
+    var totalCostElement = document.getElementById("total-cost");
+    // Set the innerHTML of the total cost element to the total cost of the items in the cart
+    totalCostElement.innerHTML = totalCost;
+}
