@@ -1,15 +1,63 @@
+<!DOCTYPE html>
 <html>
-var timer = document.getElementById("clear-timer"); 
-timer.innerHTML = ""; 
-document.getElementById("btn").onclick = function () { 
-clearTextBox(); // clears textbox when clicked 
-window.setTimeout(function() { // starts timer on click of button 
-timer.innerHTML = "Timer Started!"; // writes text in the text box 
-}, 100); // this says to start timer at a delay of 100ms 
-}; 
-var clearTextBox = function() { // to clear textbox clearTextBox.innerHTML = ""; };
-<br> 
-<div id="btn" style="width:100px;text-align:center;"><input type="button" onclick="clearTextBox()" value="Clear TextBox"></div> 
-<div id="clear-timer">
-</div> 
+<head>
+   <title>Timer App</title>
+</head>
+<body>
+
+<h1>Timer App</h1>
+
+<button onclick="startTimer()">Start Timer</button>
+<button onclick="stopTimer()">Stop Timer</button>
+<button onclick="resetTimer()">Reset Timer</button>
+
+<p id="timer"></p>
+
+<script>
+
+// This function starts the timer when the user clicks the respective button, setting an interval that updates the timer every second.
+function startTimer() {
+   setInterval(function() {
+       var timer = document.getElementById("timer").innerHTML;
+       var arr = timer.split(":");
+       var h = arr[0];
+       var m = arr[1];
+       var s = arr[2];
+       if(h == "59" && m == "59") {
+           document.getElementById("timer").innerHTML = "00:00:00";
+       } else {
+           if(s == "59") {
+               if(m != "59") {
+                   m++;
+                   if(m < 10) m = "0" + m;
+                   s = "00";
+               } else {
+                   h++;
+                   if(h < 10) h = "0" + h;
+                   m = "00";
+                   s = "00";
+               }
+           } else {
+               s++;
+               if(s < 10) s = "0" + s;
+           }
+           document.getElementById("timer").innerHTML = h + ":" + m + ":" + s;
+       }
+   }, 1000);
+}
+
+// This function stops the timer when the user clicks the respective button, clearing the interval.
+function stopTimer() {
+   clearInterval(interval);
+}
+
+// This function resets the timer clock to 00:00:00 when the user clicks the respective button.
+function resetTimer() {
+   document.getElementById("timer").innerHTML = "00:00:00";
+}
+
+</script>
+
+</body>
 </html>
+
